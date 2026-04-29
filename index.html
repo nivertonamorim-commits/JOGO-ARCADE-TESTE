@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sky Strikers 16-bit</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div id="app">
+    <canvas id="gameCanvas" width="480" height="720"></canvas>
+
+    <div id="introScreen" class="screen active">
+      <div class="parallax" id="introParallax"></div>
+      <h1 class="title">SKY STRIKERS 16-BIT</h1>
+      <button id="startBtn" class="menu-btn">Start Game</button>
+    </div>
+
+    <div id="characterScreen" class="screen">
+      <h2>Select Pilot</h2>
+      <div class="selection-grid">
+        <button class="card-btn" data-pilot="male">
+          <div class="pilot pilot-male"></div>
+          <span>Male Pilot</span>
+        </button>
+        <button class="card-btn" data-pilot="female">
+          <div class="pilot pilot-female"></div>
+          <span>Female Pilot</span>
+        </button>
+      </div>
+    </div>
+
+    <div id="environmentScreen" class="screen">
+      <h2>Select Environment</h2>
+      <div class="selection-grid env-grid">
+        <button class="card-btn env-btn" data-env="desert">Desert</button>
+        <button class="card-btn env-btn" data-env="highway">Highway</button>
+        <button class="card-btn env-btn" data-env="city">City</button>
+        <button class="card-btn env-btn" data-env="stadium">Football Stadium</button>
+      </div>
+    </div>
+
+    <div id="gameOverScreen" class="screen">
+      <h2 class="title">GAME OVER</h2>
+      <p id="finalScore"></p>
+      <button id="restartBtn" class="menu-btn">Play Again</button>
+    </div>
+  </div>
+
+  <script src="game.js"></script>
+</body>
+</html>

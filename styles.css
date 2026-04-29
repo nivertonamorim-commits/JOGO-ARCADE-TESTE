@@ -1,0 +1,82 @@
+:root {
+  --yellow: #FFD43B;
+  --deep-yellow: #FDCB0F;
+  --green: #66BB6A;
+  --dark-green: #1B5E20;
+  --ui-bg: rgba(27, 94, 32, 0.88);
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  background: #0a140b;
+  font-family: "Courier New", monospace;
+  color: var(--yellow);
+}
+#app { position: relative; width: min(100vw, 480px); }
+canvas {
+  width: 100%;
+  height: auto;
+  image-rendering: pixelated;
+  border: 3px solid var(--yellow);
+  border-radius: 8px;
+  background: #000;
+}
+.screen {
+  position: absolute;
+  inset: 0;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 16px;
+  padding: 24px;
+  background: var(--ui-bg);
+  border: 2px solid var(--yellow);
+  border-radius: 8px;
+  overflow: hidden;
+}
+.screen.active { display: flex; }
+.parallax {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background:
+   radial-gradient(circle at 20% 20%, rgba(255,212,59,.45) 0 8%, transparent 9%),
+   radial-gradient(circle at 70% 55%, rgba(102,187,106,.45) 0 9%, transparent 10%),
+   linear-gradient(180deg, #193f1d, #0f2a13 55%, #081509);
+  background-size: 180px 180px, 220px 220px, 100% 100%;
+  animation: skyScroll 8s linear infinite;
+}
+@keyframes skyScroll { from { background-position: 0 0,0 0,0 0;} to { background-position: 0 180px,0 220px,0 0;} }
+.title {
+  font-size: 2rem;
+  text-align: center;
+  letter-spacing: 2px;
+  background: linear-gradient(90deg, var(--yellow), var(--dark-green));
+  -webkit-background-clip: text;
+  color: transparent;
+  text-shadow: 1px 1px 0 rgba(0,0,0,.6);
+}
+.menu-btn, .card-btn {
+  border: 2px solid var(--deep-yellow);
+  border-radius: 14px;
+  padding: 12px 18px;
+  color: #102111;
+  font-weight: 700;
+  cursor: pointer;
+  background: linear-gradient(90deg, var(--yellow), var(--dark-green));
+  transition: transform .15s ease, filter .15s ease;
+}
+.menu-btn:hover, .card-btn:hover { transform: translateY(-2px) scale(1.03); filter: brightness(1.12); }
+.selection-grid { display: grid; grid-template-columns: repeat(2,minmax(120px,1fr)); gap: 12px; width: 100%; }
+.env-grid { grid-template-columns: repeat(2,1fr); }
+.pilot {
+  width: 44px; height: 44px; margin: 0 auto 6px;
+  image-rendering: pixelated;
+  box-shadow: inset -8px 0 rgba(0,0,0,.3);
+}
+.pilot-male { background: linear-gradient(180deg,#7f9db8,#2a4f6c); }
+.pilot-female { background: linear-gradient(180deg,#c58ec7,#713b76); }
