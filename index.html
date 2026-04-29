@@ -1,0 +1,12 @@
+<!doctype html><html><head><meta charset='utf-8'/><meta name='viewport' content='width=device-width,initial-scale=1'/><title>Neon Sky Vanguard</title><link rel='stylesheet' href='styles.css'/></head><body>
+<div id='game-root'></div>
+<div id='overlay'>
+  <div id='menu' class='panel active'><h1>NEON SKY VANGUARD</h1><p>3D Arcade Shooter</p><button id='startBtn'>Start Game</button><button id='pilotBtn'>Select Pilot</button><button id='stageBtn'>Select Stage</button></div>
+  <div id='pilot' class='panel'><h2>Select Pilot</h2><button data-pilot='male'>Male (HP+10)</button><button data-pilot='female'>Female (Speed+)</button><button class='back'>Back</button></div>
+  <div id='stage' class='panel'><h2>Select Stage</h2><button data-stage='urban'>Urban Assault</button><button data-stage='village'>Village Canopy (placeholder)</button><button data-stage='ashen'>Ashen Frontier (placeholder)</button><button data-stage='azure'>Azure Archipelago (placeholder)</button><button class='back'>Back</button></div>
+  <div id='hud'><span id='score'></span><span id='combo'></span><span id='health'></span><span id='lives'></span><span id='weapon'></span><span id='stageName'></span></div>
+  <div id='warning'></div><div id='centerMsg'></div>
+  <div id='gameover' class='panel'><h2>GAME OVER</h2><p id='finalScore'></p><button id='retryBtn'>Retry</button><button id='menuBtn'>Menu</button></div>
+</div>
+<script type='module' src='src/main.js'></script>
+</body></html>
